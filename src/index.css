@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{--bg:#fff;--ink:#1f2933;--mut:#64748b;--cell:#f6f8fa;--ln:#d8dee4;--ac:#e8590c;--ok:#2b8a3e;--k:#7048e8;--s:#0b7285}
+.dark{--bg:#0d1117;--ink:#e6edf3;--mut:#8b98a5;--cell:#161b22;--ln:#30363d;--ac:#ffa94d;--ok:#69db7c;--k:#b197fc;--s:#66d9e8}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif}
+.t-k{color:var(--k)} .t-s{color:var(--s)} .t-c{color:var(--mut);font-style:italic} .t-n{color:var(--ok)}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.2s ease forwards}
+.draw2{animation-delay:.9s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes blink{50%{opacity:.25}}
+.busy{animation:blink 1s infinite}
+@media (prefers-reduced-motion:reduce){.draw{animation:none;stroke-dashoffset:0}.busy{animation:none}}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
